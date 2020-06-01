@@ -2,7 +2,10 @@
 <!-- This is a synth laf skin xml file
 Synth uses it to generate a 'Skin' or look for swing
 With <state> tags, they work opposite  to CSS - The ones defined first override the ones defined later
-Whereas when merging styles onto a region/component, it works like CSS - Precedence is given to styles defined later in the file -->
+Whereas when merging styles onto a region/component, it works like CSS - Precedence is given to styles defined later in the file
+For some reason for some regions I can't change text colours like I'd like, so for now I'm doing away with the dimmer 'not selected' text colour
+Maybe I should just subclass each component and override it's paintComponent method, then I'd be able to get anything I want?
+Actually maybe I should make my own component library subclassing JComponent or JPanel or something along those lines -->
 
 <synth ml-update="aware">
 	<!-- A basic style, applies to all regions, as specified in the bind tag -->
@@ -15,7 +18,7 @@ Whereas when merging styles onto a region/component, it works like CSS - Precede
 		</state> -->
 		<!-- -->
 		<state> <!-- Normal state -->
-			<color value="#9DA5B4" type="TEXT_FOREGROUND"/>
+			<color value="#DBDBDB" type="TEXT_FOREGROUND"/>
 			<color value="#21252B" type="BACKGROUND"/>
 			<color value="#9DA5B4" type="FOREGROUND"/>
 			<!-- <imagePainter method="comboBoxBackground" path="images/.png" sourceInsets="2 2 2 2"/> -->
@@ -41,7 +44,7 @@ Whereas when merging styles onto a region/component, it works like CSS - Precede
 	<style id="buttonStyle">
 		<insets top="5" left="10" right="10" bottom="5"/>
 		<state> <!-- Normal state for button -->
-			<color value="#9DA5B4" type="TEXT_FOREGROUND"/>
+			<color value="#DBDBDB" type="TEXT_FOREGROUND"/>
 			<imagePainter method="buttonBackground" path="images/button.png" sourceInsets="2 2 2 2"/>
 		</state>
 		<state value="DISABLED"> <!-- Disabled state for button -->
@@ -94,7 +97,7 @@ Whereas when merging styles onto a region/component, it works like CSS - Precede
 			<imagePainter method="editorPaneBackground" path="images/textField.png" sourceInsets="2 2 2 2"/>
 			<imagePainter method="textPaneBackground" path="images/textField.png" sourceInsets="2 2 2 2"/>
 			<imagePainter method="passwordFieldBackground" path="images/textField.png" sourceInsets="2 2 2 2"/>
-			<color value="#9DA5B4" type="TEXT_FOREGROUND"/>
+			<color value="#DBDBDB" type="TEXT_FOREGROUND"/>
 			<color value="#568AF2" type="TEXT_BACKGROUND"/> <!-- Highlight colour consistent across all states -->
 		</state>
 		<state value="DISABLED"> <!-- Disabled state for text fields -->
@@ -128,7 +131,7 @@ Whereas when merging styles onto a region/component, it works like CSS - Precede
 		<insets top="5" left="10" right="10" bottom="5"/>
 		<state> <!-- Normal state for spinner editor -->
 			<imagePainter method="formattedTextFieldBackground" path="images/spinnerEditor.png" sourceInsets="2 2 2 2"/>
-			<color value="#9DA5B4" type="TEXT_FOREGROUND"/>
+			<color value="#DBDBDB" type="TEXT_FOREGROUND"/>
 			<color value="#568AF2" type="TEXT_BACKGROUND"/> <!-- Highlight colour consistent across all states -->
 		</state>
 		<state value="DISABLED"> <!-- Disabled state for spinner editor -->
@@ -152,7 +155,7 @@ Whereas when merging styles onto a region/component, it works like CSS - Precede
 		<imageIcon id="box_unchecked_hovered" path="images/checkbox/checkbox_unchecked_hovered.png"/>
 		<imageIcon id="box_unchecked_pressed" path="images/checkbox/checkbox_unchecked_pressed.png"/>
 		<state> <!-- Normal state for check boxes -->
-			<color value="#9DA5B4" type="TEXT_FOREGROUND"/>
+			<color value="#DBDBDB" type="TEXT_FOREGROUND"/>
 			<property key="CheckBox.icon" value="box_unchecked"/>
 		</state>
 		<state value="DISABLED"> <!-- Disabled state for check boxes -->
@@ -176,7 +179,7 @@ Whereas when merging styles onto a region/component, it works like CSS - Precede
 			<property key="CheckBox.icon" value="box_unchecked_pressed"/>
 		</state>
 		<state value="SELECTED"> <!-- Selected state for check boxes -->
-			<color value="#9DA5B4" type="TEXT_FOREGROUND"/>
+			<color value="#DBDBDB" type="TEXT_FOREGROUND"/>
 			<property key="CheckBox.icon" value="box_checked"/>
 		</state>
 	</style>
@@ -191,7 +194,7 @@ Whereas when merging styles onto a region/component, it works like CSS - Precede
 	<!-- Style for combo boxes arrow buttons -->
 	<style id="comboBoxBtnStyle">
 		<opaque value="TRUE"/>
-		<insets top="0" left="0" right="0" bottom="0"/>
+		<!-- <insets top="0" left="0" right="0" bottom="0"/> -->
 		<imagePainter method="arrowButtonForeground" path="images/arrows/combobox_arrow.png" direction="SOUTH" center="true"/>
 	</style>
 	<bind style="comboBoxBtnStyle" type="name" key="ComboBox.arrowButton"/>
@@ -206,7 +209,7 @@ Whereas when merging styles onto a region/component, it works like CSS - Precede
 		<opaque value="TRUE"/>
 		<!-- <defaultsProperty key="ComboBoxUI" type="String" value="javax.swing.plaf.metal.MetalComboBoxUI"/> -->
 		<state> <!-- Normal state for combo box -->
-			<color value="#9DA5B4" type="TEXT_FOREGROUND"/>
+			<color value="#DBDBDB" type="TEXT_FOREGROUND"/>
 			<imagePainter method="comboBoxBackground" path="images/comboBoxDisplayArea.png" sourceInsets="2 2 2 26"/> <!-- Appropriate source insets for the image -->
 		</state>
 		<state value="DISABLED"> <!-- Disabled state for combo box -->
@@ -224,7 +227,7 @@ Whereas when merging styles onto a region/component, it works like CSS - Precede
 	<style id="comboBoxEditorStyle">
 		<opaque value="TRUE"/>
 		<state> <!-- Normal state for combo box editor -->
-			<color value="#9DA5B4" type="TEXT_FOREGROUND"/>
+			<color value="#DBDBDB" type="TEXT_FOREGROUND"/>
 			<imagePainter method="textFieldBackground" path="images/spinnerEditor.png" sourceInsets="2 2 2 2"/>
 		</state>
 		<state value="DISABLED"> <!-- Disabled state for combo box editor -->
@@ -246,7 +249,7 @@ Whereas when merging styles onto a region/component, it works like CSS - Precede
 		<state>
 			<color value="#21252B" type="BACKGROUND"/>
 			<color value="#21252B" type="TEXT_BACKGROUND"/>
-			<color value="#9DA5B4" type="TEXT_FOREGROUND"/>
+			<color value="#DBDBDB" type="TEXT_FOREGROUND"/>
 		</state>
 		<state value="SELECTED">
 			<color value="#568AF2" type="TEXT_BACKGROUND"/>
@@ -290,7 +293,7 @@ Whereas when merging styles onto a region/component, it works like CSS - Precede
 	<style id="toggleButtonStyle">
 		<insets top="5" left="10" right="10" bottom="5"/>
 		<state> <!-- Normal state for toggle button -->
-			<color value="#9DA5B4" type="TEXT_FOREGROUND"/>
+			<color value="#DBDBDB" type="TEXT_FOREGROUND"/>
 			<imagePainter method="toggleButtonBackground" path="images/button.png" sourceInsets="2 2 2 2"/>
 		</state>
 		<state value="DISABLED"> <!-- Disabled state for toggle button -->
@@ -313,11 +316,35 @@ Whereas when merging styles onto a region/component, it works like CSS - Precede
 	<bind style="toggleButtonStyle" type="region" key="ToggleButton"/>
 
 	<!-- Style for panels -->
-	<!-- <style id="panelStyle">
+	<!-- <style id="panelStyle"> 	// Puts a dark border around all JPanels, uncomment this if you want
 		<state>
 			<color value="#21252B" type="BACKGROUND"/>
 			<imagePainter method="panelBorder" path="images/border.png" sourceInsets="2 2 2 2"/>
 		</state>
 	</style>
 	<bind style="panelStyle" type="region" key="Panel"/> -->
+
+	<!-- Style for menu bars -->
+	<style id="menuBarStyle">
+	</style>
+
+	<!-- Style for menus -->
+	<style id="menuStyle">
+		<insets top="5" left="10" right="10" bottom="5"/>
+		<state>
+			<color value="#DBDBDB" type="TEXT_FOREGROUND"/>
+		</state>
+		<state value="DISABLED">
+			<color value="#6B717D" type="TEXT_FOREGROUND"/>
+		</state>
+		<state value="MOUSE_OVER">
+			<color value="#DBDBDB" type="TEXT_FOREGROUND"/>
+			<color value="#568AF2" type="TEXT_BACKGROUND"/>
+		</state>
+		<state value="SELECTED">
+			<color value="#DBDBDB" type="TEXT_FOREGROUND"/>
+			<color value="#568AF2" type="TEXT_BACKGROUND"/>
+		</state>
+	</style>
+	<bind style="menuStyle" type="region" key="Menu"/>
 </synth>
